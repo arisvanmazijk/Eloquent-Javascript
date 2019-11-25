@@ -39,7 +39,7 @@ if (!Number.isNaN(theNumber)) {
     console.log("Your number is the square root of " + theNumber * theNumber);
 } else {
     console.log("This is not a number fool!");
-};
+}
 
 if (1 + 1 === 2) console.log("It's true");
 
