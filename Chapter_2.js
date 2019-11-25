@@ -50,5 +50,5 @@ if (num < 10) {
 } else if (num < 100) {
     console.log("Medium");
 } else {
-    console.log("Large");
+    console.log("Large")
 }
