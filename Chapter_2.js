@@ -43,12 +43,55 @@ if (!Number.isNaN(theNumber)) {
 
 if (1 + 1 === 2) console.log("It's true");
 
-let num = 140;
+// let num = 140;
 
-if (num < 10) {
-    console.log("Small");
-} else if (num < 100) {
-    console.log("Medium");
-} else {
-    console.log("Large");
+// if (num < 10) {
+//     console.log("Small");
+// } else if (num < 100) {
+//     console.log("Medium");
+// } else {
+//     console.log("Large");
+// };
+
+let num = 0;
+while (num <= 12) {
+    console.log(num);
+    num = num + 2;
+};
+
+// let result = 1, counter = 0;
+// while (counter < 10) {
+//     result = result * 2;
+//     counter = counter + 1;
+// };
+// console.log(result);
+
+let yourName = "Test";
+do {
+    console.log("Enter your name");
+} while (!yourName);
+console.log(yourName);
+
+if (false != true) {
+    console.log("This makes sense");
+    if (1 < 2) {
+        console.log("This is true");
+    };
+};
+
+for ( let nu = 0; nu <= 12; nu += 2) {
+    console.log(nu); 
+}
+
+let result = 1;
+for (counter = 0; counter < 10; counter ++) {
+    result = result * 2;
+}
+console.log(result);
+
+for (let current = 20; ; current ++) {
+    if (current % 7 == 0) {
+        console.log(current);
+        break;
+    }
 }
