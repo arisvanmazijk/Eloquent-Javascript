@@ -127,9 +127,10 @@ for (let number = 1; number <= 100; number++ ) {
 
 let string = "";
 let line = ""
-for (let num = 0; num <= 7; num++) {
+let size = 7;
+for (let num = 0;num <= size; num++) {
     if (num % 2 == 0) {
-        for (let subNum = 0; subNum <= 7; subNum ++) {
+        for (let subNum = 0; subNum <= size; subNum ++) {
             if (subNum % 2 == 0) {
                 line += " ";
             } else {
@@ -137,7 +138,7 @@ for (let num = 0; num <= 7; num++) {
             }
         }
     } else {
-        for (let subNum = 0; subNum <= 7; subNum ++) {
+        for (let subNum = 0; subNum <= size; subNum ++) {
             if (subNum % 2 == 0) {
                 line += "#";
             } else {
@@ -145,7 +146,7 @@ for (let num = 0; num <= 7; num++) {
             }
         }
     }
-    string = string + line + "\n";
+    string += line + "\n";
     line = "";
  }
 console.log(string);
