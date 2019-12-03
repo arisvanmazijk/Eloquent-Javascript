@@ -12,5 +12,5 @@
 // console.log(findName(array, names));
 
 let arrays = [[1, 2, 3], [4, 5], [6]];
-console.log(arrays.reduce((a, b) => a.concat(b)));
+console.log(arrays.reduce((current, element) => current.concat(element)));
 // → [1, 2, 3, 4, 5, 6]
