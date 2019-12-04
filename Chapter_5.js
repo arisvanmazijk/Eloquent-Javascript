@@ -42,7 +42,7 @@ function every(array, test) {
 // console.log(every([], n => n < 10));
 
 //Dominant writing direction
-require('./path/to/scripts.js;
+require('./scripts.js');
 
 function countBy(items, groupName) {
     let counts = [];
