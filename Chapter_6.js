@@ -14,6 +14,37 @@ class Vec {
     }
 }
 
-console.log(new Vec(1, 2).plus(new Vec(2, 3)));
-console.log(new Vec(1, 2).minus(new Vec(2, 3)));
-console.log(new Vec(3, 4).length);
+// console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+// console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+// console.log(new Vec(3, 4).length);
+
+class Group {
+    constructor() {
+        this.group = [];
+    }
+    add(val) {
+        if (!this.group.includes(val)) return this.group.push(val);
+    }
+    delete(val) {
+        if (this.group.includes(val)) return this.group.splice(this.group.indexOf(val), 1);
+    }
+    has(val) {
+        return this.group.includes(val);
+    }
+    static from(val) {
+        let group = new Group();
+        for (let i of val) {
+            group.add(i);
+        }
+        return group;
+    }
+}
+let group = Group.from([10, 20]);
+// console.log(group.has(10));
+// → true
+// console.log(group.has(30));
+// → false
+group.add(10);
+group.delete(10);
+// console.log(group.has(10));
+// → false
