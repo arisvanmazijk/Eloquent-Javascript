@@ -167,16 +167,18 @@ function runRobot(state, robot, memory) {
         console.log(`Robot 2 needed ${total2 / 100} steps per task`);
     }
 
-    //compareRobots(routeRobot, [], goalOrientedRobot, []);
+    // compareRobots(lazyRobot, [], goalOrientedRobot, []);
 
     function lazyRobot({place, parcels}, route) {
       if (route.length == 0) {
+        // Describe a route for every parcel
         let routes = parcels.map(parcel => {
           if (parcel.place != place) {
            return {route: findRoute(roadGraph, place, parcel.place), pickUp: true};
         } else {
-           return {route: findRoute(roadGraph, place, parcel.place), pickUp: false};
-        }});
+           return {route: findRoute(roadGraph, place, parcel.address), pickUp: false};
+        }
+      });
 
         function score({route, pickUp}) {
           return (pickUp ? 0.5 : 0) - route.length;
@@ -186,4 +188,29 @@ function runRobot(state, robot, memory) {
       return {direction: route[0], memory: route.slice(1)};
     }
 
-    runRobot(VillageState.random(), lazyRobot, []);
+    //  runRobot(VillageState.random(), lazyRobot, []);
+
+    class PGroup {
+      constructor(members) {
+        this.members = members;
+      }
+      add(val) {
+        return new PGroup(this.members.concat(val));
+      }
+      delete(val) {
+        return new PGroup(this.members.filter(n => n !== val));
+      }
+      has(val) {
+        return this.members.includes(val);
+      } 
+    }
+
+    PGroup.empty = new PGroup([]);
+
+    let a = PGroup.empty.add("a");
+    let ab = a.add("b");
+    let b = ab.delete("a");
+
+    console.log(b.has("b"));
+    console.log(a.has("b"));
+    console.log(b.has("a"));
