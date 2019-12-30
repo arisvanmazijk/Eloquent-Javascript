@@ -191,7 +191,7 @@ function runRobot(state, robot, memory) {
     //  runRobot(VillageState.random(), lazyRobot, []);
 
     class PGroup {
-      constructor(members) {
+      constructor(members) { 
         this.members = members;
       }
       add(val) {
