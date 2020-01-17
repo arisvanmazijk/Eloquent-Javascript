@@ -1,2 +1,2 @@
-let i = "Agnes" || null;
+let i = 0 && null;
 console.log(i);
