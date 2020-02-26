@@ -127,7 +127,7 @@ for (let number = 1; number <= 100; number++ ) {
 
 let string = "";
 let line = ""
-let size = 7;
+let size = 8;
 for (let num = 0;num <= size; num++) {
     if (num % 2 == 0) {
         for (let subNum = 0; subNum <= size; subNum ++) {
