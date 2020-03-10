@@ -1,5 +1,4 @@
 //Roads Module
-
 const {buildGraph} = require("./graph");
 
 const roads = [
@@ -12,4 +11,4 @@ const roads = [
   "Marketplace-Town Hall",       "Shop-Town Hall"
 ];
 
-exports.roadGraph = buildGraph(roads.map(r => r.split("-")));
+console.log(exports.roadGraph = buildGraph(roads.map(r => r.split("-"))));
