@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/game.css">
+{/* <link rel="stylesheet" href="css/game.css">
 
 <body>
 <script>
@@ -23,4 +23,4 @@
   }
   runGame(GAME_LEVELS, DOMDisplay);
 </script>
-</body>
+</body> */}
