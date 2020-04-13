@@ -1,11 +1,11 @@
-const {createServer} = require("http");
-const Router = require("./router");
-const ecstatic = require("ecstatic");
+var {createServer} = require("http");
+var Router = require("./router");
+var ecstatic = require("ecstatic");
 
-const router = new Router();
-const defaultHeaders = {"Content-Type": "text/plain"};
+var router = new Router();
+var defaultHeaders = {"Content-Type": "text/plain"};
 
-class SkillShareServer {
+var SkillShareServer = class SkillShareServer {
   constructor(talks) {
     this.talks = talks;
     this.version = 0;
@@ -20,19 +20,19 @@ class SkillShareServer {
           return {body: String(error), status: 500};
         }).then(({body,
                   status = 200,
-                  headers = defaultHeaders}) => {
+                  headers = defaultHeaders}) => { 
           response.writeHead(status, headers);
           response.end(body);
         });
       } else {
         fileServer(request, response);
-        console.log("request gemaakt");
+        console.log("Er is een request geweest");
       }
     });
   }
   start(port) {
     this.server.listen(port);
-    console.log("Server gestart");
+    console.log("Hij werkt");
   }
   stop() {
     this.server.close();
